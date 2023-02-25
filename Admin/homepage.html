@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/homepage.css">    
+    </head>
+    <body>
+    
+    <ul>
+        <li>
+            <a href="#prevpage">&#8249;</a>
+        </li>
+        <li>
+            <a href="#search">Search</a>
+        </li>
+        <li>
+            <input type="text" placeholder="">
+        </li>
+        <div class="topnav-right">
+            <li>
+                <a onclick="myFunction()">Logout</a>
+            </li>
+            <li>
+                <a href="#toggle">toggle dark mode</a>
+            </li>
+        </div>
+    </ul>
+    <div class="topnav">
+        <a class="active" href="#home">Pythonopolis</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Login</a>
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+    <script>
+        function myFunction() {
+          let text = "Confirm Logout";
+          if (confirm(text) == true) {
+            // text = "You pressed OK!";
+            // should direct user to homepage
+          } else {
+            text = "You canceled!";
+          }
+          document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+    
+    <div style="padding:20px;margin-top:30px;background-color:#fdffff;height:1500px;">    
+        <table>
+            <tr>
+                <th>Profile ID</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Delete Button</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td>Mike</td>
+                <td>Admin</td>
+                <td><button class="deleteBtn">Delete</button></td>
+            </tr>
+        </table
+    </div>
+    </body>
+</html>

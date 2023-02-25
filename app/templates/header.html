@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<header>
+    <ul>
+        <div class="topnav-left">
+            <li>
+                <a class="home" href="{{ url_for('home') }}">Home</a>
+            </li>
+            <li>
+                <script>
+                    function search_animal() {
+                    // Declare variables
+                    var input, filter, table, tr, td, i, txtValue;
+                    input = document.getElementById("searchbar");
+                    filter = input.value.toUpperCase();
+                    table = document.getElementById("myTable");
+                    tr = table.getElementsByTagName("tr");
+                    
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (i = 0; i < tr.length; i++) {
+                        td = tr[i].getElementsByTagName("td")[2];
+                        if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                        }
+                    }
+                    }
+                    </script>
+                <input class="search" id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search for user..">
+            </li>
+            <li>
+                <a class="logout" href="{{ url_for('login') }}">Logout</a>
+            </li>
+            
+        </div>
+        <div class="topnav-right">
+            <li>
+                <script>
+                    function myFunction() {
+                        var element = document.body;
+                        element.classList.toggle("dark-mode");
+                    }
+
+                    toggleSwitch.addEventListener('change', switchTheme, false);
+                </script>
+                <div class="switch">
+                    <label class="theme-switch" for="checkbox">
+                    <input onclick="myFunction()" type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                    </label>
+                </div>
+            </li>
+        </div>
+    </ul>
+</header>
